@@ -13,6 +13,7 @@ The environment runs on a Proxmox VE host with an Ubuntu Server virtual machine 
 - **Nginx:** Web server hosting a local website.
 - **Docker:** Container runtime for self-hosted applications.
 - **Homepage:** Central dashboard linking to homelab services.
+- **Jellyfin:** Self-hosted media streaming server deployed with Docker Compose.
 - **Uptime Kuma:** Availability monitoring for infrastructure and applications.
 - **Discord Webhooks:** Notifications for monitoring events.
 
@@ -23,17 +24,19 @@ The environment runs on a Proxmox VE host with an Ubuntu Server virtual machine 
 | Proxmox VE | Virtual machine management |
 | Nginx | Local website hosting |
 | Homepage | Homelab service dashboard |
+| Jellyfin | Self-hosted media streaming |
 | Uptime Kuma | Service availability monitoring |
 | Discord | Monitoring notifications |
 
 ## Monitoring Configuration
 
-Four monitors were configured:
+Five monitors were configured:
 
 1. Homelab website — HTTP check.
 2. Proxmox host — ping check.
 3. Proxmox web interface — HTTPS check.
 4. Homepage dashboard — HTTP check.
+5. Jellyfin media server - HTTP check against its local web interface.
 
 The monitors use a 60-second heartbeat interval and two retries to reduce false alarms from brief interruptions. Discord notifications were configured and tested successfully.
 
@@ -64,6 +67,8 @@ The monitors use a 60-second heartbeat interval and two retries to reduce false 
 - Investigate secure HTTPS access for the website and dashboard.
 - Explore backup and recovery procedures.
 - Document future infrastructure and security improvements.
+- Configure and document network media storage for Jellyfin.
+- Test Jellyfin playback and media availability monitoring.
 
 ## Project Status
 
